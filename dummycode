@@ -1,0 +1,7 @@
+/*<TextInput
+  underlineColorAndroid="#FFFFFF"
+  style={{height: 40,borderColor: '#fff', borderBottomColor:'#ffffff', color: "#FFFFFF",
+  fontWeight: 'bold',flex: 1}}
+  placeholder="Search"
+  onChangeText={(text) => this.setState({text})}
+/>{ myIcon }*/

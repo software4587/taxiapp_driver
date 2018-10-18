@@ -1,0 +1,125 @@
+api calling in react native
+- install axios
+- npm install axios
+- use this code :
+
+axios.get('https://jsonplaceholder.typicode.com/users')
+.then(function (response) {
+  console.warn(response.data);
+});
+
+
+Queries in rest api ?
+
+
+
+-----------------------
+Redux concepts
+- reducers
+- actions
+- dispatchers
+- providerss
+
+
+------------------------
+
+
+How to use this app
+- login screen1
+
+
+/*  const facebookIcon = (
+    <Image
+      source={require('../images/instagram.png')}
+      style={styles.icon}
+    />
+  );*/
+
+    //{facebookIcon}
+
+
+    <View style={{width: 70, height: 70}}>
+      <Icon name="facebook-square" size={30} color="#3B5998"/>
+    </View>
+    <View style={{width: 70, height: 70}} >
+      <Icon name="google-plus-circle" size={30} color="#DB4437"/>
+    </View>
+    <View style={{width: 70, height: 70}} >
+      <Icon name="twitter" size={30} color="#1DA1F2"/>
+    </View>
+    <View style={{width: 70, height: 70}} >
+      <Icon name="pinterest" size={30} color="#BD081C"/>
+    </View>
+    <View style={{width: 70, height: 70}} >
+      <Icon name="instagram" size={30} color="#262626"/>
+    </View>
+
+
+=================
+
+
+componentWillMount()
+{
+  axios.get("https://jsonplaceholder.typicode.com/todos/1")
+  .then(response => {
+    this.setState({ resultArray: response.data })
+    //console.warn(response.data);
+  });
+}
+
+dataSource:[{company:'Apple LTD',title:'software development',address:'2844 Counts Lane, KY 4521',
+exp:'3+ years experience',duration:'Full Time',jobkeys:'Androd,Java',applyNow:'Apply Now'},
+{company:'Apple LTD',title:'software development',address:'2844 Counts Lane, KY 4521',
+exp:'3+ years experience',duration:'Full Time',jobkeys:'Androd,Java',applyNow:'Apply Now'},
+{company:'Apple LTD',title:'software development',address:'2844 Counts Lane, KY 4521',
+exp:'3+ years experience',duration:'Full Time',jobkeys:'Androd,Java',applyNow:'Apply Now'}
+]
+
+renderItem = ({item}) => {
+  return (
+        <View style={{marginBottom:15,marginTop: 15}}>
+        <Text style={styles.jobHeading}>{item.company}</Text>
+        <Text style={styles.jobSubHeading}>{item.title}</Text>
+        <Text>{item.address}</Text>
+        <Text>{item.exp}</Text>
+        <Text>{item.duration}</Text>
+        <Text>{item.jobkeys}</Text>
+        <Text style={styles.applyNow}>{item.applyNow}</Text>
+        </View>
+  )
+}
+
+
+<View style={styles.container}>
+<LinearGradient
+    colors={['#75b3e5','#b96dc4']}
+    start={[0.0, 0.8]}
+    end={[1.0, 0.5]}
+    style={{ width: 375,height: 70 }}>
+
+    <View style={{flex: 1, flexDirection: 'row'}}>
+    <View style={{marginLeft:20, marginTop:25, width: 40, height: 50, padding: 10}}>{ myButton }</View>
+    <View style={{width: 300, marginTop:5, height: 50, padding: 10}} ><Header name="Job Search" /></View>
+    </View>
+</LinearGradient>
+<View style={styles.sec2}>
+  <TextInput
+  underlineColorAndroid="#FFFFFF"
+    style={styles.TextInputStyleClass}
+    placeholder="android development jobs in hyderabad"
+    onChangeText={(text) => this.setState({text})}
+  />
+</View>
+
+<View style={{ width: 350,height: 600}}>
+/*<FlatList
+  data={this.state.resultArray}
+  renderItem={this.renderItem}
+  ItemSeparatorComponent={this.renderSeparator}
+/>*/
+<Text>Hello World</Text>
+</View>
+</View>
+
+
+<Text>{this.state.resultArray.map(person=><Text>{person.title}</Text>)}</Text>

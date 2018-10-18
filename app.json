@@ -1,0 +1,13 @@
+{
+  "expo": {
+    "name": "GRADECHOICE",
+    "slug": "GRADE-CHOICE",
+    "sdkVersion": "27.0.0",
+    "privacy": "public",
+    "version": "1.0.0",
+    "orientation":"portrait",
+    "android": {  
+    "package": "com.itinformatix.gradechoice"
+  }
+  }
+}
