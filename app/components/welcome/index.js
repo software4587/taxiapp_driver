@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+mport React, { Component } from 'react';
 import { View, Text, ImageBackground , StyleSheet, Image, TouchableOpacity } from 'react-native';
-//import {Font} from 'expo';
+import {Font} from 'expo';
 
 export default class Welcome extends Component
 {
@@ -8,19 +8,19 @@ export default class Welcome extends Component
     header:null,
  };
 
- /*state = {
+ state = {
     fontLoaded: false,
-};*/
+};
 
-/*async componentDidMount() {
+async componentDidMount() {
       await Font.loadAsync({
           //'GothamLight': require('../../../assets/fonts/GothamLight.ttf'),
           'GothamBold': require('../../../assets/fonts/GothamBold.ttf'),
           'GothamBook': require('../../../assets/fonts/GothamBook.ttf'),
-          //'0GothamBookItalic': require('../../../assets/fonts/GothamBookItalic.ttf'),
+          'GothamBookItalic': require('../../../assets/fonts/GothamBookItalic.ttf'),
       });
       this.setState({fontLoaded: true});
-  }*/
+  }
 
 
   render()
@@ -37,6 +37,25 @@ export default class Welcome extends Component
         <Text style={{fontSize:35,fontWeight:'bold',color:'#FFFFFF'}}>Taman Jurong! </Text>
         <Text style={{fontSize:20,color:'#FFFFFF'}}>Book your ride now and happy journey</Text>
       </View>
+
+          {
+              this.state.fontLoaded ? (
+                  <View style={styles.section1}>
+
+                      {/*started editing below to include custom fonts*/}
+                    <Text style={{
+                        fontFamily: 'GothamBookItalic',
+                        fontSize: 30,
+                        // fontWeight:'bold',
+                        color: '#FFFFFF'
+
+                    }}
+                    >Welcome To </Text>
+                    <Text style={{fontFamily: 'GothamBookItalic', fontSize: 35, color: '#FFFFFF'}}>Taman Jurong! </Text>
+                    <Text style={{fontFamily: 'GothamBookItalic', fontSize: 20, color: '#FFFFFF'}}>Book your ride now and happy journey</Text>
+                  </View>
+              ) : null
+          }
 
 
 
