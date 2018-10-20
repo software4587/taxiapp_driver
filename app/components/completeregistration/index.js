@@ -38,10 +38,14 @@ export default class CompleteRegistration extends Component
         <View style={styles.logoContainer}>
           <Image source={require('../images/app_logo.png')} style= {styles.logoStyle} />
         </View>
-        <View style={styles.section1}>
-          <Text style={{fontSize:22,fontWeight:'bold',color:'#FFFFFF'}}>Complete Registration </Text>
-          <Text style={{fontSize:15,color:'#FFFFFF'}}>Please complete your registration here</Text>
-        </View>
+          {
+              this.state.fontLoaded ? (
+                <View style={styles.section1}>
+                  <Text style={{fontSize:22,fontFamily: 'GothamBold',color:'#FFFFFF'}}>Complete Registration </Text>
+                  <Text style={{fontSize:15, fontFamily: 'GothamBook', color:'#FFFFFF'}}>Please complete your registration here</Text>
+                </View>
+                      ) : null
+          }
 
         <View style={styles.regContainer}>
         <View style={styles.loginFields}>
@@ -102,7 +106,11 @@ export default class CompleteRegistration extends Component
         </View>
         <View style={styles.section2}>
         <TouchableOpacity onPress={() => this.props.navigation.navigate('MyProfile')}style={{backgroundColor:'#F3C143', height:45, borderRadius:10,alignItems:'center', justifyContent:'center'}}>
-          <Text style={{fontSize:20,fontWeight:'bold'}}>COMPLETE SIGNUP</Text>
+            {
+                this.state.fontLoaded ? (
+            <Text style={{fontSize:20,fontFamily: 'GothamBold'}}>COMPLETE SIGNUP</Text>
+                ) : null
+            }
         </TouchableOpacity>
         </View>
       </View>

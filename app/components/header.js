@@ -16,7 +16,7 @@ const Header = (props) => {
           color:'#FFFFFF',
           // textAlign:'center',
           // marginLeft:90,
-          fontFamily: 'GothamBookItalic',
+          fontFamily: 'GothamBold',
       }}>{props.name}</Text>
       </View>
     </View>
