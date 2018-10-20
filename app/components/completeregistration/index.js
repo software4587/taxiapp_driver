@@ -1,16 +1,39 @@
 import React, { Component } from 'react';
 import { ScrollView, View, Text, ImageBackground , StyleSheet, Image, TouchableOpacity, TextInput } from 'react-native';
 import Header from '../header.js';
+import {Font} from 'expo';
+
 export default class CompleteRegistration extends Component
 {
   static navigationOptions = {
     header:null,
  };
+
+    state = {
+        fontLoaded: false,
+    };
+
+    async componentDidMount() {
+        await Font.loadAsync({
+            'GothamBold': require('../../../assets/fonts/GothamBold.ttf'),
+            'GothamBook': require('../../../assets/fonts/GothamBook.ttf'),
+
+            'GothamBookItalic': require('../../../assets/fonts/GothamBookItalic.ttf'),
+            'GothamUltraItalic': require('../../../assets/fonts/Gotham-UltraItalic.otf'),
+        });
+        this.setState({fontLoaded: true});
+    }
+
   render()
   {
     return (
       <ImageBackground source={require('../images/regbackground.jpg')}  style={styles.container}>
-      <Header name="COMPLETE SIGNUP" /> 
+
+          {
+              this.state.fontLoaded ? (
+        <Header name="COMPLETE SIGNUP" fontFamily="GothamBold" />
+              ) : null
+          }
       <ScrollView>
         <View style={styles.logoContainer}>
           <Image source={require('../images/app_logo.png')} style= {styles.logoStyle} />

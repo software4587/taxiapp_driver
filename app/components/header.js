@@ -4,13 +4,20 @@ import { Text, View, Image } from 'react-native';
 
 const Header = (props) => {
   const { textStyle } = styles;
+
   return(
     <View style={styles.headerStyle}>
       <View style={{flexDirection:'row'}}>
       <View style={{marginLeft:15}}>
       <Image source={require('./images/backarrow.png')} style= {styles.iconStyle} />
       </View>
-      <Text style={textStyle}>{props.name}</Text>
+      <Text style={{
+          fontSize:20,
+          color:'#FFFFFF',
+          // textAlign:'center',
+          // marginLeft:90,
+          fontFamily: 'GothamBookItalic',
+      }}>{props.name}</Text>
       </View>
     </View>
   )
@@ -25,7 +32,7 @@ const styles = {
     fontSize:20,
     color:'#FFFFFF',
     textAlign:'center',
-    marginLeft:90   
+    marginLeft:90,
   },
   headerStyle:{
     backgroundColor:'#c72d33',
@@ -33,7 +40,7 @@ const styles = {
     height:70,
     //justifyContent: 'center',
     alignItems: 'center',
-    flexDirection:'row'
+    flexDirection:'row',
   }
 }
 
