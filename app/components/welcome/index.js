@@ -17,8 +17,6 @@ export default class Welcome extends Component {
             'GothamBold': require('../../../assets/fonts/GothamBold.ttf'),
             'GothamBook': require('../../../assets/fonts/GothamBook.ttf'),
 
-            'GothamBookItalic': require('../../../assets/fonts/GothamBookItalic.ttf'),
-            'GothamUltraItalic': require('../../../assets/fonts/Gotham-UltraItalic.otf'),
         });
         this.setState({fontLoaded: true});
     }
