@@ -1,24 +1,51 @@
 import React, { Component } from 'react';
 import { ScrollView, View, Text, ImageBackground , StyleSheet, Image, TouchableOpacity, TextInput } from 'react-native';
 import Header from '../header.js';
+import {Font} from 'expo';
+
 export default class CompleteRegistration extends Component
 {
   static navigationOptions = {
     header:null,
  };
+
+    state = {
+        fontLoaded: false,
+    };
+
+    async componentDidMount() {
+        await Font.loadAsync({
+            'GothamBold': require('../../../assets/fonts/GothamBold.ttf'),
+            'GothamBook': require('../../../assets/fonts/GothamBook.ttf'),
+
+            'GothamBookItalic': require('../../../assets/fonts/GothamBookItalic.ttf'),
+            'GothamUltraItalic': require('../../../assets/fonts/Gotham-UltraItalic.otf'),
+        });
+        this.setState({fontLoaded: true});
+    }
+
   render()
   {
     return (
       <ImageBackground source={require('../images/regbackground.jpg')}  style={styles.container}>
-      <Header name="COMPLETE SIGNUP" /> 
+
+          {
+              this.state.fontLoaded ? (
+        <Header name="COMPLETE SIGNUP" fontFamily="GothamBold" />
+              ) : null
+          }
       <ScrollView>
         <View style={styles.logoContainer}>
           <Image source={require('../images/app_logo.png')} style= {styles.logoStyle} />
         </View>
-        <View style={styles.section1}>
-          <Text style={{fontSize:22,fontWeight:'bold',color:'#FFFFFF'}}>Complete Registration </Text>
-          <Text style={{fontSize:15,color:'#FFFFFF'}}>Please complete your registration here</Text>
-        </View>
+          {
+              this.state.fontLoaded ? (
+                <View style={styles.section1}>
+                  <Text style={{fontSize:22,fontFamily: 'GothamBold',color:'#FFFFFF'}}>Complete Registration </Text>
+                  <Text style={{fontSize:15, fontFamily: 'GothamBook', color:'#FFFFFF'}}>Please complete your registration here</Text>
+                </View>
+                      ) : null
+          }
 
         <View style={styles.regContainer}>
         <View style={styles.loginFields}>
@@ -79,7 +106,11 @@ export default class CompleteRegistration extends Component
         </View>
         <View style={styles.section2}>
         <TouchableOpacity onPress={() => this.props.navigation.navigate('MyProfile')}style={{backgroundColor:'#F3C143', height:45, borderRadius:10,alignItems:'center', justifyContent:'center'}}>
-          <Text style={{fontSize:20,fontWeight:'bold'}}>COMPLETE SIGNUP</Text>
+            {
+                this.state.fontLoaded ? (
+            <Text style={{fontSize:20,fontFamily: 'GothamBold'}}>COMPLETE SIGNUP</Text>
+                ) : null
+            }
         </TouchableOpacity>
         </View>
       </View>

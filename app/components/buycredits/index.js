@@ -1,62 +1,99 @@
 import React, { Component } from 'react';
 import { View, Text, ImageBackground , StyleSheet, Image, TouchableOpacity, TextInput } from 'react-native';
 import Header from '../header.js';
+import {Font} from 'expo';
 
 export default class BuyCredits extends Component
 {
   static navigationOptions = {
     header:null,
  };
+
+    state = {
+        fontLoaded: false,
+    };
+
+    async componentDidMount() {
+        await Font.loadAsync({
+            'GothamBold': require('../../../assets/fonts/GothamBold.ttf'),
+            'GothamBook': require('../../../assets/fonts/GothamBook.ttf'),
+
+            'GothamBookItalic': require('../../../assets/fonts/GothamBookItalic.ttf'),
+            'GothamUltraItalic': require('../../../assets/fonts/Gotham-UltraItalic.otf'),
+        });
+        this.setState({fontLoaded: true});
+    }
+
   render()
   {
     return (
       <View  style={styles.container}>
-      <Header name="BUY CREDITS" />
+          {
+              this.state.fontLoaded ? (
+      <Header name="BUY CREDITS" fontFamily="GothamBold"/>
+              ) : null
+          }
+
+          {
+              this.state.fontLoaded ? (
+               <View style={styles.detailSection}>
+                <Image source={require('../images/yellow.png')} style= {styles.dollarIconStyle} />
+                  <View>
+                    <Text style={{marginLeft:20, fontFamily: 'GothamBook'}}>100 Credits</Text>
+                    <Text style={{marginLeft:20, fontFamily: 'GothamBook', color: '#888888'}}>Get 100 Credits in just $10</Text>
+                  </View>
+                  <View style={{marginLeft:50, borderWidth:1, backgroundColor:'#FFFFFF',width:45,borderRadius:1,borderColor:'#f2bc35'}}>
+                    <Text style={{ fontFamily:"GothamBold", color:'#f3c143',textAlign:'center'}}>GET</Text>
+                  </View>
+               </View>
+              ) : null
+          }
+
+
+          {
+              this.state.fontLoaded ? (
           <View style={styles.detailSection}>
               <Image source={require('../images/yellow.png')} style= {styles.dollarIconStyle} />
                 <View>
-                  <Text style={{marginLeft:20}}>100 Credits</Text>
-                  <Text style={{marginLeft:20}}>Get 100 Credits in just $10</Text>
+                  <Text style={{marginLeft:20, fontFamily: 'GothamBook'}}>100 Credits</Text>
+                  <Text style={{marginLeft:20, fontFamily: 'GothamBook', color: '#888888'}}>Get 100 Credits in just $10</Text>
                 </View>
                 <View style={{marginLeft:50, borderWidth:1, backgroundColor:'#FFFFFF',width:45,borderRadius:1,borderColor:'#f2bc35'}}>
-                  <Text style={{fontWeight:'bold',color:'#f2bc35',textAlign:'center'}}>GET</Text>
+                  <Text style={{fontFamily:"GothamBold", color:'#f3c143',textAlign:'center'}}>GET</Text>
                 </View>
           </View>
+              ) : null
+          }
 
+          {
+              this.state.fontLoaded ? (
           <View style={styles.detailSection}>
               <Image source={require('../images/yellow.png')} style= {styles.dollarIconStyle} />
                 <View>
-                  <Text style={{marginLeft:20}}>100 Credits</Text>
-                  <Text style={{marginLeft:20}}>Get 100 Credits in just $10</Text>
+                  <Text style={{marginLeft:20, fontFamily: 'GothamBook'}}>100 Credits</Text>
+                  <Text style={{marginLeft:20, fontFamily: 'GothamBook', color: '#888888'}}>Get 100 Credits in just $10</Text>
                 </View>
                 <View style={{marginLeft:50, borderWidth:1, backgroundColor:'#FFFFFF',width:45,borderRadius:1,borderColor:'#f2bc35'}}>
-                  <Text style={{fontWeight:'bold',color:'#f2bc35',textAlign:'center'}}>GET</Text>
+                  <Text style={{fontFamily:"GothamBold", color:'#f3c143',textAlign:'center'}}>GET</Text>
                 </View>
           </View>
+              ) : null
+          }
 
+          {
+              this.state.fontLoaded ? (
           <View style={styles.detailSection}>
               <Image source={require('../images/yellow.png')} style= {styles.dollarIconStyle} />
                 <View>
-                  <Text style={{marginLeft:20}}>100 Credits</Text>
-                  <Text style={{marginLeft:20}}>Get 100 Credits in just $10</Text>
+                  <Text style={{marginLeft:20, fontFamily: 'GothamBook'}}>100 Credits</Text>
+                  <Text style={{marginLeft:20, fontFamily: 'GothamBook', color: '#888888'}}>Get 100 Credits in just $10</Text>
                 </View>
                 <View style={{marginLeft:50, borderWidth:1, backgroundColor:'#FFFFFF',width:45,borderRadius:1,borderColor:'#f2bc35'}}>
-                  <Text style={{fontWeight:'bold',color:'#f2bc35',textAlign:'center'}}>GET</Text>
+                  <Text style={{fontFamily:"GothamBold", color:'#f3c143',textAlign:'center'}}>GET</Text>
                 </View>
           </View>
-
-          <View style={styles.detailSection}>
-              <Image source={require('../images/yellow.png')} style= {styles.dollarIconStyle} />
-                <View>
-                  <Text style={{marginLeft:20}}>100 Credits</Text>
-                  <Text style={{marginLeft:20}}>Get 100 Credits in just $10</Text>
-                </View>
-                <View style={{marginLeft:50, borderWidth:1, backgroundColor:'#FFFFFF',width:45,borderRadius:1,borderColor:'#f2bc35'}}>
-                  <Text style={{fontWeight:'bold',color:'#f2bc35',textAlign:'center'}}>GET</Text>
-                </View>
-          </View>
-
-
+              ) : null
+          }
 
 
 
