@@ -34,15 +34,6 @@ export default class MyBalance extends Component {
                             onPress={() => this.props.navigation.navigate('Pickup')}>
                     </Button>
 
-                    {/*<TouchableOpacity*/}
-                    {/*// onPress={() => this.props.navigation.navigate('Pickup')}*/}
-                    {/*onPress={() => this.props.navigation.goBack()}*/}
-                    {/*style={{ backgroundColor: 'red'*/}
-                    {/*}}>*/}
-                    {/*<Header name="MY BALANCE"/>*/}
-                    {/*/!*<Text>MY BALANCE</Text>*!/*/}
-
-                    {/*</TouchableOpacity>*/}
                 </View>
                 <View style={{backgroundColor: '#f3353d'}}>
 
