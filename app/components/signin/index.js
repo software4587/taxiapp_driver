@@ -15,9 +15,7 @@ export default class Welcome extends Component {
         await Font.loadAsync({
             'GothamBold': require('../../../assets/fonts/GothamBold.ttf'),
             'GothamBook': require('../../../assets/fonts/GothamBook.ttf'),
-
             'GothamBookItalic': require('../../../assets/fonts/GothamBookItalic.ttf'),
-            'GothamUltraItalic': require('../../../assets/fonts/Gotham-UltraItalic.otf'),
         });
         this.setState({fontLoaded: true});
     }
@@ -55,9 +53,10 @@ export default class Welcome extends Component {
                 {
                     this.state.fontLoaded ? (
                         <View style={styles.loginFields}>
-                    <View style={{marginBottom: 10}}>
+                    <View style={styles.SectionStyle}>
+                        <Image source={require('../images/chinaMap.png')} style={styles.iconStyle}/>
                         <TextInput
-                            style={{backgroundColor: '#FFFFFF', borderRadius: 10, height: 50}}
+                            style={{backgroundColor: '#FFFFFF', borderRadius: 10, height: 50, width: 200}}
                             placeholder='+65   Your Phone Number'
                             underlineColorAndroid='transparent'
                             textAlign='center'
@@ -88,15 +87,8 @@ export default class Welcome extends Component {
                         alignItems: 'center',
                         justifyContent: 'center'
                     }}>
-                        {
-                            this.state.fontLoaded ? (
                         <Text style={{
-                            fontFamily: 'GothamBold',
-                            fontSize: 20,
-                            // fontWeight: 'bold'
-                        }}>LOGIN</Text>
-                            ) : null
-                        }
+                            fontFamily: 'GothamBold',fontSize: 20, fontWeight: 'bold'}}>LOGIN</Text>
                     </TouchableOpacity>
                 </View>
                 <View style={{

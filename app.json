@@ -8,6 +8,7 @@
     "orientation":"portrait",
     "android": {  
     "package": "com.itinformatix.gradechoice"
-  }
+  },
+    "icon": "./app/components/images/app_icon.png"
   }
 }
