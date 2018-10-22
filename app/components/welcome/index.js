@@ -44,7 +44,7 @@ export default class Welcome extends Component {
                             >Welcome To </Text>
                             <Text style={{fontFamily: 'GothamBold', fontSize: 35, color: '#FFFFFF'}}>Taman
                                 Jurong! </Text>
-                            <Text style={{fontFamily: 'GothamBook', fontSize: 20, color: '#FFFFFF'}}>Book your ride now
+                            <Text style={{fontFamily: 'GothamBook', fontSize: 15, color: '#FFFFFF'}}>Book your ride now
                                 and happy journey</Text>
                         </View>
                     ) : null
@@ -54,7 +54,7 @@ export default class Welcome extends Component {
                 <View style={styles.section2}>
                     <TouchableOpacity onPress={() => this.props.navigation.navigate('Signin')} style={{
                         backgroundColor: '#FFFFFF',
-                        height: 70,
+                        height: 55,
                         borderRadius: 10,
                         alignItems: 'center',
                         justifyContent: 'center'
@@ -71,9 +71,9 @@ export default class Welcome extends Component {
                         flexDirection: 'row',
                         alignItems: 'center',
                         justifyContent: 'space-around',
-                        marginTop: 10,
+                        marginTop: 15, 
                         width: 250,
-                        marginLeft: 50,
+                        marginLeft: 35,
                     }}>
                         <View>
                             <Text style={{fontFamily: 'GothamBook', color: '#be98db', fontSize: 15}}>Ready to earn?</Text>

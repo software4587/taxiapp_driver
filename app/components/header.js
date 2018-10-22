@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, Image } from 'react-native';
+import {Text, View, Image, TouchableHighlight} from 'react-native';
 
 
 const Header = (props) => {
@@ -38,10 +38,9 @@ const styles = {
     backgroundColor:'#c72d33',
     alignSelf: 'stretch',
     height:70,
-    justifyContent: 'center',
     alignItems: 'center',
     flexDirection:'row',
-    paddingTop:20  
+    paddingTop:20
   }
 }
 

@@ -36,57 +36,94 @@ export default class MyProfile extends Component {
                     <View style={styles.topMainContainer}>
                         <View style={styles.withdrawSection}>
                             <Image source={require('../images/man01.png')} style={styles.avatarImage}/>
+                            {
+                                this.state.fontLoaded ? (
                             <View style={{paddingLeft: 35}}>
-                                <Text style={{fontWeight: 'bold'}}>John Doe</Text>
-                                <Text>john.doe@gmail.com</Text>
-                                <Text>Mobile: +65 52525252</Text>
+                                <Text style={{fontFamily:'GothamBook',fontSize:20}}>John Doe</Text>
+                                <Text style={{fontFamily:'GothamBook',fontSize:13}}>john.doe@gmail.com</Text>
+                                <Text style={{fontFamily:'GothamBook',fontSize:13}}>Mobile: +65 52525252</Text>
                             </View>
+                          ):null
+                          }
                         </View>
+                        {
+                            this.state.fontLoaded ? (
                         <View style={{marginLeft: 100}}>
-                            <Text style={{fontWeight: 'bold'}}>CAR INFORMATION</Text>
-                            <Text>Mercedes CLA</Text>
-                            <Text>SGA 15289</Text>
+                            <Text style={{fontFamily:'GothamBold'}}>CAR INFORMATION</Text>
+                            <Text style={{fontFamily:'GothamBook',fontSize:13}}>Mercedes CLA</Text>
+                            <Text style={{fontFamily:'GothamBook',fontSize:13}}>SGA 15289</Text>
                         </View>
-                        <View style={{marginLeft: 100}}>
-                            <Text style={{fontWeight: 'bold'}}>CAR INFORMATION</Text>
-                            <Text>Mercedes CLA</Text>
-                            <Text>SGA 15289</Text>
+                      ):null
+                      }
+                      {
+                        this.state.fontLoaded ? (
+                        <View style={{marginLeft: 100,marginTop:10}}>
+                            <Text style={{fontFamily:'GothamBold'}}>CAR INFORMATION</Text>
+                            <Text style={{fontFamily:'GothamBook',fontSize:13}}>Mercedes CLA</Text>
+                            <Text style={{fontFamily:'GothamBook',fontSize:13}}>SGA 15289</Text>
                         </View>
+                      ):null
+                      }
                     </View>
 
                     <View style={styles.detailSection}>
+
+
                         <View style={{flexDirection: 'row', marginLeft: 20, marginTop: 5, marginBottom: 5}}>
                             <Image source={require('../images/pencil.png')} style={styles.imageFooter}/>
-                            <Text style={{paddingLeft: 20}}
+                            {
+                                this.state.fontLoaded ? (
+                            <Text style={{paddingLeft: 20,fontFamily:'GothamBook',color:'#888888'}}
                                   onPress={() => this.props.navigation.navigate('EditProfile')}>Edit Profile</Text>
+                                ) :null
+                            }
+
                         </View>
+
                         <View style={{flexDirection: 'row', marginLeft: 20, marginTop: 5, marginBottom: 5}}>
                             <Image source={require('../images/location_icon.png')} style={styles.imageFooter}/>
-                            <Text style={{paddingLeft: 20}} onPress={() => this.props.navigation.navigate('MyCredits')}>My
+                            <Text style={{paddingLeft: 20,fontFamily:'GothamBook',color:'#888888'}} onPress={() => this.props.navigation.navigate('MyCredits')}>My
                                 Credits</Text>
                         </View>
-                        <View style={{flexDirection: 'row', marginLeft: 20, marginTop: 5, marginBottom: 5}}>
+                        <View style={{flexDirection: 'row', marginLeft: 20, marginTop: 5, marginBottom: 2}}>
                             <Image source={require('../images/car.png')} style={styles.imageFooter}/>
-                            <Text style={{paddingLeft: 20}}
+                            <Text style={{paddingLeft: 20,fontFamily:'GothamBook',color:'#888888'}}
                                   onPress={() => this.props.navigation.navigate('MyBookings')}>My Bookings</Text>
                         </View>
-                        <View style={{flexDirection: 'row', marginLeft: 20, marginTop: 5, marginBottom: 5}}>
-                            <Image source={require('../images/key.png')} style={styles.imageFooter}/>
-                            <Text style={{paddingLeft: 20}} onPress={() => this.props.navigation.navigate('MyBalance')}>My
+                        <View style={{flexDirection: 'row', marginLeft: 20, marginTop: 5, marginBottom: 2}}>
+                            <Image source={require('../images/key_lightgray.png')} style={styles.imageFooter}/>
+                            <Text style={{paddingLeft: 20,fontFamily:'GothamBook',color:'#888888'}} onPress={() => this.props.navigation.navigate('MyBalance')}>My
                                 Balance</Text>
                         </View>
-                        <View style={{flexDirection: 'row', marginLeft: 20, marginTop: 5, marginBottom: 5}}>
-                            <Image source={require('../images/settinggear.png')} style={styles.imageFooter}/>
-                            <Text style={{paddingLeft: 20}} onPress={() => this.props.navigation.navigate('Settings')}>Settings</Text>
+                        <View style={{flexDirection: 'row', marginLeft: 20, marginTop: 5, marginBottom: 2}}>
+                            <Image source={require('../images/setting_gray.png')} style={styles.imageFooter}/>
+                            <Text style={{paddingLeft: 20,fontFamily:'GothamBook',color:'#888888'}} onPress={() => this.props.navigation.navigate('Settings')}>Settings</Text>
                         </View>
-                        <View style={{flexDirection: 'row', marginLeft: 20, marginTop: 5, marginBottom: 5}}>
+                        <View style={{flexDirection: 'row', marginLeft: 20, marginTop: 5, marginBottom: 2}}>
                             <Image source={require('../images/home.png')} style={styles.imageFooter}/>
-                            <Text style={{paddingLeft: 20}}>Help</Text>
+                            <Text style={{paddingLeft: 20,fontFamily:'GothamBook',color:'#888888'}}
+                          onPress={() => this.props.navigation.navigate('Pickup')}>Pickup</Text>
                         </View>
-                        <View style={{flexDirection: 'row', marginLeft: 20, marginTop: 5, marginBottom: 5}}>
+                        <View style={{flexDirection: 'row', marginLeft: 20, marginTop: 5, marginBottom: 2}}>
                             <Image source={require('../images/logout.png')} style={styles.imageFooter}/>
-                            <Text style={{paddingLeft: 20}}>Logout</Text>
+                            <Text style={{paddingLeft: 20,fontFamily:'GothamBook',color:'#888888'}}>Logout</Text> 
                         </View>
+                        <View style={{flexDirection: 'row', marginLeft: 20, marginTop: 5, marginBottom: 2}}>
+                            <Image source={require('../images/logout.png')} style={styles.imageFooter}/>
+                            <Text style={{paddingLeft: 20,fontFamily:'GothamBook',color:'#888888'}}
+                            onPress={() => this.props.navigation.navigate('BuyCredits')}>Buy Credits</Text>
+                        </View>
+                        <View style={{flexDirection: 'row', marginLeft: 20, marginTop: 5, marginBottom: 2}}>
+                            <Image source={require('../images/logout.png')} style={styles.imageFooter}/>
+                            <Text style={{paddingLeft: 20,fontFamily:'GothamBook',color:'#888888'}}
+                            onPress={() => this.props.navigation.navigate('Dropoff')}>Drop Off</Text>
+                        </View>
+                        <View style={{flexDirection: 'row', marginLeft: 20, marginTop: 5, marginBottom: 2}}>
+                            <Image source={require('../images/logout.png')} style={styles.imageFooter}/>
+                            <Text style={{paddingLeft: 20,fontFamily:'GothamBook',color:'#888888'}}
+                            onPress={() => this.props.navigation.navigate('Dashboard')}>Dashboard</Text>
+                        </View>
+
                     </View>
                 </View>
                 <Footer />
@@ -115,8 +152,8 @@ const styles = StyleSheet.create({
         height: 20
     },
     imageFooter: {
-        width: 18,
-        height: 18
+        width: 20,
+        height: 20
     },
     regContainer: {
         padding: 10,
@@ -183,7 +220,7 @@ const styles = StyleSheet.create({
     },
     detailSection: {
         width: 325,
-        height: 200,
+        height: 300,
         backgroundColor: '#FFFFFF',
         marginBottom: 5,
         marginTop: 10

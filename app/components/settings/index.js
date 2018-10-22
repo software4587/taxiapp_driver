@@ -2,38 +2,60 @@ import React, { Component } from 'react';
 import { View, Text, ImageBackground , StyleSheet, Image, TouchableOpacity, TextInput } from 'react-native';
 import Header from '../header';
 import Footer from '../footer.js';
+import {Font} from 'expo';
 
 export default class Settings extends Component
 {
   static navigationOptions = {
     header:null,
  };
+
+
+ state = {
+     fontLoaded: false,
+ };
+
+ async componentDidMount() {
+     await Font.loadAsync({
+         'GothamBold': require('../../../assets/fonts/GothamBold.ttf'),
+         'GothamBook': require('../../../assets/fonts/GothamBook.ttf'),
+
+         'GothamBookItalic': require('../../../assets/fonts/GothamBookItalic.ttf'),
+         'GothamUltraItalic': require('../../../assets/fonts/Gotham-UltraItalic.otf'),
+     });
+     this.setState({fontLoaded: true}); 
+ }
+
   render()
   {
     return (
       <View  style={styles.container}>
 
-        <Header name="SETTINGS" />
+      {
+          this.state.fontLoaded ? (
+              <Header name="SETTINGS" fontFamily="GothamBold"/>
+          ) : null
+      }
           <View style={styles.section1}>
 
           <View style={styles.section1Inner}>
               <Image source={require('../images/bell_gray.png')} style= {styles.greenIconStyle} />
-              <Text style={{marginLeft:20}}>Notification</Text>
+              <Text style={{marginLeft:20,fontFamily:'GothamBook'}}>Notification</Text>
           </View>
 
           <View style={styles.section1Inner}>
               <Image source={require('../images/star.png')} style= {styles.greenIconStyle} />
-              <Text style={{marginLeft:20}}>Privacy Policy</Text>
+              <Text style={{marginLeft:20,fontFamily:'GothamBook'}}>Privacy Policy</Text>
           </View>
 
           <View style={styles.section1Inner}>
               <Image source={require('../images/star.png')} style= {styles.greenIconStyle} />
-              <Text style={{marginLeft:20}}>Terms And Conditions</Text>
+              <Text style={{marginLeft:20,fontFamily:'GothamBook'}}>Terms And Conditions</Text>
           </View>
 
           <View style={styles.section1Inner}>
               <Image source={require('../images/star.png')} style= {styles.greenIconStyle} />
-              <Text style={{marginLeft:20}}>FAQs</Text>
+              <Text style={{marginLeft:20,fontFamily:'GothamBook'}}>FAQs</Text>
           </View>
 
           </View>
@@ -87,7 +109,7 @@ const styles = StyleSheet.create({
     marginLeft:40
   },
   section1:{
-    flex:1, 
+    flex:1,
     //marginBottom:5,
     //marginTop:20,
     //marginLeft:45,
