@@ -106,7 +106,7 @@ export default class MyProfile extends Component {
                         </View>
                         <View style={{flexDirection: 'row', marginLeft: 20, marginTop: 5, marginBottom: 2}}>
                             <Image source={require('../images/logout.png')} style={styles.imageFooter}/>
-                            <Text style={{paddingLeft: 20,fontFamily:'GothamBook',color:'#888888'}}>Logout</Text> 
+                            <Text style={{paddingLeft: 20,fontFamily:'GothamBook',color:'#888888'}}>Logout</Text>
                         </View>
                         <View style={{flexDirection: 'row', marginLeft: 20, marginTop: 5, marginBottom: 2}}>
                             <Image source={require('../images/logout.png')} style={styles.imageFooter}/>
@@ -126,7 +126,7 @@ export default class MyProfile extends Component {
 
                     </View>
                 </View>
-                <Footer />
+                <Footer navigation={this.props.navigation}/>
             </View>
         );
     }

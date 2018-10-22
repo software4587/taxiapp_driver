@@ -6,7 +6,7 @@ import {Font} from 'expo';
 
 export default class MyBalance extends Component {
     static navigationOptions = {
-        // header: null,
+         header: null,
         title: "MY BALANCE",
         headerLeft: (
             <View>
@@ -45,15 +45,7 @@ export default class MyBalance extends Component {
 
                     {/*</TouchableOpacity>*/}
                 </View>
-                <View style={{backgroundColor: '#f3353d'}}>
-
-                    <Button title="MY BALANCE"
-                            style={{backgroundColor: '#f3353d'}}
-                            onPress={() => this.props.navigation.navigate('Pickup')}>
-                    </Button>
-
-                </View>
-
+              
                 <View style={{flex: 1}}>
                     <View style={styles.withdrawSection}>
                         <Text style={{fontSize: 35,}}>1,258</Text>
@@ -115,7 +107,7 @@ export default class MyBalance extends Component {
                         <Text style={{marginLeft: 150, fontWeight: 'bold', color: 'green'}}>$2.50</Text>
                     </View>
                 </View>
-                <Footer />
+                <Footer navigation={this.props.navigation}/>
             </View>
         );
     }
