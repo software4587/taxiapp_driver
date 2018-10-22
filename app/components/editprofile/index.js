@@ -36,9 +36,9 @@ export default class EditProfile extends Component {
 
                     <View style={{justifyContent: 'center', alignItems: 'center'}}>
                         <Image source={require('../images/girl.png')} style={styles.logoStyle}/>
-                        <Text>Scarlet Johnson</Text>
-                        <Text>scarletjohnson@gmail.com</Text>
-                        <Text>Mobile :+65 9696-9696</Text>
+                        <Text style={{fontFamily:'GothamBold'}}>Scarlet Johnson</Text>
+                        <Text style={{fontFamily:'GothamBook'}}>scarletjohnson@gmail.com</Text>
+                        <Text style={{fontFamily:'GothamBook'}}>Mobile :+65 9696-9696</Text>
                     </View>
 
                     <View style={{marginTop: 35}}>

@@ -23,7 +23,11 @@ export default class CreateNewAccount extends Component {
     render() {
         return (
             <ImageBackground source={require('../images/regbackground.jpg')} style={styles.container}>
-                <Header name="SIGN UP"/>
+            {
+                this.state.fontLoaded ? (
+                    <Header name="SIGN UP" fontFamily="GothamBold"/> 
+                ) : null
+            }
                 <ScrollView>
                     <View style={styles.logoContainer}>
                         <Image source={require('../images/app_logo.png')} style={styles.logoStyle}/>
@@ -32,7 +36,7 @@ export default class CreateNewAccount extends Component {
                         this.state.fontLoaded ? (
                             <View style={styles.section1}>
                                 <Text style={{fontSize: 22, fontFamily: 'GothamBold', color: '#FFFFFF'}}>Create New
-                                    Accountss </Text>
+                                    Account </Text>
                                 <Text style={{fontSize: 15, fontFamily: 'GothamBook', color: '#FFFFFF'}}>Fill following
                                     information to get
                                     register</Text>
