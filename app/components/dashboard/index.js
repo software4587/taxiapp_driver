@@ -1,26 +1,50 @@
 import React, { Component } from 'react';
 import { View, Text, ImageBackground , StyleSheet, Image, TouchableOpacity, TextInput } from 'react-native';
 import Header from '../header.js';
+import Footer from '../footer.js';
+import {Font} from 'expo';
 
 export default class Dashboard extends Component
 {
   static navigationOptions = {
     header:null,
  };
+
+ state = {
+     fontLoaded: false,
+ };
+
+ async componentDidMount() {
+     await Font.loadAsync({
+         'GothamBold': require('../../../assets/fonts/GothamBold.ttf'),
+         'GothamBook': require('../../../assets/fonts/GothamBook.ttf'),
+
+         'GothamBookItalic': require('../../../assets/fonts/GothamBookItalic.ttf'),
+         'GothamUltraItalic': require('../../../assets/fonts/Gotham-UltraItalic.otf'),
+     });
+     this.setState({fontLoaded: true});
+ }
+
+
   render()
   {
     return (
       <View  style={styles.container}>
-      <Header name="DASHBOARD" />
+      {
+          this.state.fontLoaded ? (
+              <Header name="DASHBOARD" fontFamily="GothamBold"/>
+          ) : null
+      }
+      <View style={{flex:1}}>
           <View style={styles.withdrawSection}>
             <Image source={require('../images/man01.png')} style= {styles.avatarImage} />
             <View style={{paddingLeft:35}}>
-            <Text style={{fontWeight:'bold'}}>John Doe</Text>
-            <Text>Mercedes CLA</Text>
-            <Text>SGP 138hu</Text>
+            <Text style={{fontWeight:'bold',fontFamily:'GothamBold'}}>John Doe</Text>
+            <Text style={{fontFamily:'GothamBook'}}>Mercedes CLA</Text>
+            <Text style={{fontFamily:'GothamBook'}}>SGP 138hu</Text>
             <View style={{flexDirection:'row'}}>
             <Image source={require('../images/star_yellow.png')} style= {styles.startStyle} />
-            <Text>4.8</Text>
+            <Text style={{fontFamily:'GothamBook'}}>4.8</Text>
             </View>
             </View>
           </View>
@@ -29,18 +53,18 @@ export default class Dashboard extends Component
 
           <View style={styles.detailSection}>
             <View style={{flexDirection:'row'}}>
-              <Text style={{marginLeft:20,fontWeight:'bold',fontSize:15}}>Scarlet Johnson</Text>
+              <Text style={{marginLeft:20,fontFamily:'GothamBold',fontSize:15}}>Scarlet Johnson</Text>
 
               <View style={{ marginLeft:20,backgroundColor:'#fccb32',width:50,
                 alignItems:'center',justifyContent:'center',flexDirection:'row',borderRadius:5}}>
               <Image source={require('../images/star_white.png')} style= {styles.imageFooter} />
-              <Text style={{fontWeight:'bold',color:'#FFFFFF'}}>4.7</Text>
+              <Text style={{fontFamily:'GothamBold',color:'#FFFFFF'}}>4.7</Text>
               </View>
             </View>
-              <Text style={{marginLeft:20}}>Booking ID: #212154</Text>
+              <Text style={{marginLeft:20,fontFamily:'GothamBook'}}>Booking ID: #212154</Text>
               <View style={{flexDirection:'row', paddingTop:10}}>
-              <Text style={{marginLeft:20,fontWeight:'bold',color:'gray'}}>13.2km</Text>
-              <Text style={{marginLeft:20,fontWeight:'bold',color:'red'}}>SGD 12.65</Text>
+              <Text style={{marginLeft:20,fontFamily:'GothamBold',color:'#8c8c8c'}}>13.2km</Text>
+              <Text style={{marginLeft:20,fontFamily:'GothamBold',color:'#f40000'}}>SGD 12.65</Text>
               </View>
 
               <View style={{flexDirection:'row',marginLeft:20,marginTop:5}}>
@@ -48,8 +72,8 @@ export default class Dashboard extends Component
                 <Image source={require('../images/redlight.png')} style= {styles.imageFooter} />
 
                 <View style={{marginLeft:15}}>
-                <Text style={{fontSize:10,fontWeight:'bold'}}>PICKUP LOCATION</Text>
-                <Text>Eunos Road 8 #05-03 Singapore</Text>
+                <Text style={{fontSize:10,fontFamily:'GothamBold'}}>PICKUP LOCATION</Text>
+                <Text style={{fontFamily:'GothamBook'}}>Eunos Road 8 #05-03 Singapore</Text>
                 </View>
               </View>
 
@@ -58,63 +82,52 @@ export default class Dashboard extends Component
                 <Image source={require('../images/green_icon.png')} style= {styles.imageFooter} />
 
                 <View style={{marginLeft:15}}>
-                <Text style={{fontSize:10,fontWeight:'bold'}}>DROP-OFF LOCATION</Text>
-                <Text>Eunos Road 8 #05-03 Singapore</Text>
+                <Text style={{fontSize:10,fontFamily:'GothamBold'}}>DROP-OFF LOCATION</Text>
+                <Text style={{fontFamily:'GothamBook'}}>Eunos Road 8 #05-03 Singapore</Text>
                 </View>
               </View>
               <View style={{flexDirection:'row', justifyContent:'space-around', alignItems:'center', paddingTop:15}}>
               <TouchableOpacity style={{backgroundColor:'red', height:35, width:150, borderRadius:10,alignItems:'center', justifyContent:'center'}}>
-                 <Text style={{fontSize:10,fontWeight:'bold',color:'#FFFFFF'}}>REJECT</Text>
+                 <Text style={{fontSize:10,fontFamily:'GothamBold',color:'#FFFFFF'}}>REJECT</Text>
              </TouchableOpacity>
              <TouchableOpacity style={{backgroundColor:'green', height:35, width:150, borderRadius:10,alignItems:'center', justifyContent:'center'}}>
-                <Text style={{fontSize:10,fontWeight:'bold',color:'#FFFFFF'}}>ACCEPT</Text>
+                <Text style={{fontSize:10,fontFamily:'GothamBold',color:'#FFFFFF'}}>ACCEPT</Text>
             </TouchableOpacity>
               </View>
           </View>
 
-          <View style={styles.paymentSections}>
-          <View>
-          <Text style={{color:'gray'}}>My Credits</Text>
-          <Text style={{color:'blue'}}>Total Available Credits</Text>
-          </View>
-          <Text style={{color:'gray',paddingLeft:130,fontWeight:'bold', fontSize:14, paddingTop:5}}>1,254</Text>
-          </View>
+
 
           <View style={styles.paymentSections}>
           <View>
-          <Text style={{color:'gray'}}>My Credits</Text>
-          <Text style={{color:'blue'}}>Total Available Credits</Text>
+          <Text style={{color:'gray',fontFamily:'GothamBook'}}>My Credits</Text>
+          <Text style={{color:'blue',fontFamily:'GothamBook'}}>Total Available Credits</Text>
           </View>
-          <Text style={{color:'gray',paddingLeft:130,fontWeight:'bold', fontSize:14, paddingTop:5}}>1,254</Text>
+          <Text style={{color:'gray',paddingLeft:130,fontWeight:'bold', fontSize:14, paddingTop:5,fontFamily:'GothamBook'}}>1,254</Text>
           </View>
 
           <View style={styles.paymentSections}>
           <View>
-          <Text style={{color:'gray'}}>My Credits</Text>
-          <Text style={{color:'blue'}}>Total Available Credits</Text>
+          <Text style={{color:'gray',fontFamily:'GothamBook'}}>My Credits</Text>
+          <Text style={{color:'blue',fontFamily:'GothamBook'}}>Total Available Credits</Text>
           </View>
-          <Text style={{color:'gray',paddingLeft:130,fontWeight:'bold', fontSize:14, paddingTop:5}}>1,254</Text>
-          </View>
-
-          <View style={styles.section6}>
-          <View style={styles.section6Inner}>
-            <Image source={require('../images/user_icon.png')} style= {styles.footerIconStyle} />
-            <Image source={require('../images/file-bag.png')} style= {styles.footerIconStyle} />
-            <Image source={require('../images/app_logo.png')} style= {styles.footerIconStyle} />
-            <Image source={require('../images/dollar.png')} style= {styles.footerIconStyle} />
-            <Image source={require('../images/gethelp.png')} style= {styles.footerIconStyle} />
+          <Text style={{color:'gray',paddingLeft:130,fontWeight:'bold', fontSize:14, paddingTop:5,fontFamily:'GothamBook'}}>1,254</Text>
           </View>
 
-          <View style={styles.section6Inner}>
-          <Text style={{marginLeft:0}} onPress={() =>  this.props.navigation.navigate('EditProfile')}>My Profile</Text>
-          <Text style={{marginLeft:0}} onPress={() =>  this.props.navigation.navigate('MyCredits')}>My Credits</Text>
-          <Text style={{marginLeft:0}} onPress={() =>  this.props.navigation.navigate('MyRide')}>Dashboard</Text>
-          <Text style={{marginLeft:0}} onPress={() =>  this.props.navigation.navigate('Settings')}>My Balance</Text>
-          <Text style={{marginLeft:0}}>Get Help</Text>
+          <View style={styles.paymentSections}>
+          <View>
+          <Text style={{color:'gray',fontFamily:'GothamBook'}}>My Credits</Text>
+          <Text style={{color:'blue',fontFamily:'GothamBook'}}>Total Available Credits</Text>
           </View>
+          <Text style={{color:'gray',paddingLeft:130,fontWeight:'bold', fontSize:14, paddingTop:5,fontFamily:'GothamBook'}}>1,254</Text>
           </View>
+
 
       </View>
+
+      <Footer />
+      </View>
+
     );
   }
 }

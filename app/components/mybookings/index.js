@@ -2,63 +2,85 @@ import React, { Component } from 'react';
 import { View, Text, ImageBackground , StyleSheet, Image, TouchableOpacity, TextInput } from 'react-native';
 import Header from '../header';
 import Footer from '../footer.js';
+import {Font} from 'expo';
 
 export default class MyBookings extends Component
 {
   static navigationOptions = {
     header:null,
  };
+
+ state = {
+     fontLoaded: false,
+ };
+
+ async componentDidMount() {
+     await Font.loadAsync({
+         'GothamBold': require('../../../assets/fonts/GothamBold.ttf'),
+         'GothamBook': require('../../../assets/fonts/GothamBook.ttf'),
+
+         'GothamBookItalic': require('../../../assets/fonts/GothamBookItalic.ttf'),
+         'GothamUltraItalic': require('../../../assets/fonts/Gotham-UltraItalic.otf'),
+     });
+     this.setState({fontLoaded: true});
+ }
+
+
   render()
   {
     return (
       <View  style={styles.container}>
       <View style={{flex:1}}>
-        <Header name="MY BOOKINGS" />
+      {
+          this.state.fontLoaded ? (
+        <Header name="MY BOOKINGS" fontFamily="GothamBold"/>
+      ):null
+      }
           <View style={styles.section2}>
           <View>
-            <Text style={{fontSize:10,fontWeight:'bold'}}>SCARLET JOHANSON</Text>
-            <Text style={{color:'gray'}}>BOOKING ID #4541414</Text>
-            <Text>Sonas Road 89</Text>
-            <Text>Sonas Road 56</Text>
-            <Text style={{fontWeight:'bold'}}>$12.50</Text>
+            <Text style={{fontSize:10,fontWeight:'bold', fontFamily:'GothamBold'}}>SCARLET JOHANSON</Text>
+            <Text style={{color:'#888888', fontFamily:'GothamBook'}}>BOOKING ID #4541414</Text>
+            <Text style={{fontFamily:'GothamBook'}}>Sonas Road 89</Text>
+            <Text style={{fontFamily:'GothamBook'}}>Sonas Road 56</Text>
+            <Text style={{fontFamily:'GothamBold'}}>$12.50</Text>
           </View>
-          <View style={{paddingLeft:40, alignItems:'flex-end'}}>
-            <Text style={{fontSize:15,fontWeight:'bold'}}>Tues 23, 2018, 20:30</Text>
-            <Text style={{color:'#fccb32'}}>In-Progress</Text>
-          </View>
-          </View>
-
-
-          <View style={styles.section2}>
-          <View>
-            <Text style={{fontSize:10,fontWeight:'bold'}}>SCARLET JOHANSON</Text>
-            <Text style={{color:'gray'}}>BOOKING ID #4541414</Text>
-            <Text>Sonas Road 89</Text>
-            <Text>Sonas Road 56</Text>
-            <Text style={{fontWeight:'bold'}}>$12.50</Text>
-          </View>
-          <View style={{paddingLeft:40, alignItems:'flex-end'}}>
-            <Text style={{fontSize:15,fontWeight:'bold'}}>Tues 23, 2018, 20:30</Text>
-            <Text style={{color:'green'}}>Completed</Text>
+          <View style={{paddingLeft:30, alignItems:'flex-end'}}>
+            <Text style={{fontSize:15,fontWeight:'bold',fontFamily:'GothamBook'}}>Tues 23, 2018, 20:30</Text>
+            <Text style={{color:'#dfb328',fontFamily:'GothamBook'}}>In-Progress</Text>
           </View>
           </View>
 
 
           <View style={styles.section2}>
           <View>
-            <Text style={{fontSize:10,fontWeight:'bold'}}>SCARLET JOHANSON</Text>
-            <Text style={{color:'gray'}}>BOOKING ID #4541414</Text>
-            <Text>Sonas Road 89</Text>
-            <Text>Sonas Road 56</Text>
-            <Text style={{fontWeight:'bold'}}>$12.50</Text>
+            <Text style={{fontSize:10,fontWeight:'bold', fontFamily:'GothamBold'}}>SCARLET JOHANSON</Text>
+            <Text style={{color:'#888888',fontFamily:'GothamBook'}}>BOOKING ID #4541414</Text>
+            <Text style={{fontFamily:'GothamBook'}}>Sonas Road 89</Text>
+            <Text style={{fontFamily:'GothamBook'}}>Sonas Road 56</Text>
+            <Text style={{fontFamily:'GothamBold'}}>$12.50</Text>
           </View>
-          <View style={{paddingLeft:40, alignItems:'flex-end'}}>
-            <Text style={{fontSize:15,fontWeight:'bold'}}>Tues 23, 2018, 20:30</Text>
-            <Text style={{color:'red'}}>Cancelled</Text>
+          <View style={{paddingLeft:30, alignItems:'flex-end'}}>
+            <Text style={{fontSize:15,fontWeight:'bold',fontFamily:'GothamBook'}}>Tues 23, 2018, 20:30</Text>
+            <Text style={{color:'#1fd177',fontFamily:'GothamBook'}}>Completed</Text>
+          </View>
+          </View>
+
+
+          <View style={styles.section2}>
+          <View>
+            <Text style={{fontSize:10,fontWeight:'bold',fontFamily:'GothamBold'}}>SCARLET JOHANSON</Text>
+            <Text style={{color:'#888888',fontFamily:'GothamBook'}}>BOOKING ID #4541414</Text>
+            <Text style={{fontFamily:'GothamBook'}}>Sonas Road 89</Text>
+            <Text style={{fontFamily:'GothamBook'}}>Sonas Road 56</Text>
+            <Text style={{fontFamily:'GothamBold'}}>$12.50</Text>
+          </View>
+          <View style={{paddingLeft:30, alignItems:'flex-end'}}>
+            <Text style={{fontSize:15,fontWeight:'bold',fontFamily:'GothamBook'}}>Tues 23, 2018, 20:30</Text>
+            <Text style={{color:'#f4371e',fontFamily:'GothamBook'}}>Cancelled</Text>
           </View>
           </View>
       </View>
-        <Footer /> 
+        <Footer />
       </View>
     );
   }

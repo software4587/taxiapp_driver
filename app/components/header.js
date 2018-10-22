@@ -11,7 +11,7 @@ const Header = (props) => {
       <Image source={require('./images/backarrow.png')} style= {styles.iconStyle} />
       </View>
           { props.fontFamily? <Text style={{
-              fontSize:20,
+              fontSize:18,
               color:'#FFFFFF',
               fontFamily: 'GothamBold',
           }}>{props.name}</Text>: <Text style={{
@@ -40,6 +40,7 @@ const styles = {
     height:70,
     alignItems: 'center',
     flexDirection:'row',
+    paddingTop:20
   }
 }
 

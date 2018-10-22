@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {View, Text, ImageBackground, StyleSheet, Image, TouchableOpacity, TextInput, Button} from 'react-native';
 import Header from '../header.js';
 import Footer from '../footer.js';
+import {Font} from 'expo';
 
 export default class MyBalance extends Component {
     static navigationOptions = {

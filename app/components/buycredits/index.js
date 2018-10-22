@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { View, Text, ImageBackground , StyleSheet, Image, TouchableOpacity, TextInput } from 'react-native';
 import Header from '../header.js';
+import Footer from '../footer.js';
+
 import {Font} from 'expo';
 
 export default class BuyCredits extends Component
@@ -28,6 +30,7 @@ export default class BuyCredits extends Component
   {
     return (
       <View  style={styles.container}>
+        <View style={{flex:1}}>
           {
               this.state.fontLoaded ? (
       <Header name="BUY CREDITS" fontFamily="GothamBold"/>
@@ -42,7 +45,7 @@ export default class BuyCredits extends Component
                     <Text style={{marginLeft:20, fontFamily: 'GothamBook'}}>100 Credits</Text>
                     <Text style={{marginLeft:20, fontFamily: 'GothamBook', color: '#888888'}}>Get 100 Credits in just $10</Text>
                   </View>
-                  <View style={{marginLeft:50, borderWidth:1, backgroundColor:'#FFFFFF',width:45,borderRadius:1,borderColor:'#f2bc35'}}>
+                  <View style={{marginLeft:50, borderWidth:1, backgroundColor:'#FFFFFF',width:45,borderRadius:2,borderColor:'#f2bc35',height:20}}>
                     <Text style={{ fontFamily:"GothamBold", color:'#f3c143',textAlign:'center'}}>GET</Text>
                   </View>
                </View>
@@ -58,7 +61,7 @@ export default class BuyCredits extends Component
                   <Text style={{marginLeft:20, fontFamily: 'GothamBook'}}>100 Credits</Text>
                   <Text style={{marginLeft:20, fontFamily: 'GothamBook', color: '#888888'}}>Get 100 Credits in just $10</Text>
                 </View>
-                <View style={{marginLeft:50, borderWidth:1, backgroundColor:'#FFFFFF',width:45,borderRadius:1,borderColor:'#f2bc35'}}>
+                <View style={{marginLeft:50, borderWidth:1, backgroundColor:'#FFFFFF',width:45,borderRadius:2,borderColor:'#f2bc35',height:20}}>
                   <Text style={{fontFamily:"GothamBold", color:'#f3c143',textAlign:'center'}}>GET</Text>
                 </View>
           </View>
@@ -73,7 +76,7 @@ export default class BuyCredits extends Component
                   <Text style={{marginLeft:20, fontFamily: 'GothamBook'}}>100 Credits</Text>
                   <Text style={{marginLeft:20, fontFamily: 'GothamBook', color: '#888888'}}>Get 100 Credits in just $10</Text>
                 </View>
-                <View style={{marginLeft:50, borderWidth:1, backgroundColor:'#FFFFFF',width:45,borderRadius:1,borderColor:'#f2bc35'}}>
+                <View style={{marginLeft:50, borderWidth:1, backgroundColor:'#FFFFFF',width:45,borderRadius:2,borderColor:'#f2bc35',height:20}}>
                   <Text style={{fontFamily:"GothamBold", color:'#f3c143',textAlign:'center'}}>GET</Text>
                 </View>
           </View>
@@ -88,33 +91,18 @@ export default class BuyCredits extends Component
                   <Text style={{marginLeft:20, fontFamily: 'GothamBook'}}>100 Credits</Text>
                   <Text style={{marginLeft:20, fontFamily: 'GothamBook', color: '#888888'}}>Get 100 Credits in just $10</Text>
                 </View>
-                <View style={{marginLeft:50, borderWidth:1, backgroundColor:'#FFFFFF',width:45,borderRadius:1,borderColor:'#f2bc35'}}>
+                <View style={{marginLeft:50, borderWidth:1, backgroundColor:'#FFFFFF',width:45,borderRadius:2,borderColor:'#f2bc35',height:20}}>
                   <Text style={{fontFamily:"GothamBold", color:'#f3c143',textAlign:'center'}}>GET</Text>
                 </View>
           </View>
               ) : null
-          }
+          } 
 
 
 
-          <View style={styles.section6}>
-          <View style={styles.section6Inner}>
-            <Image source={require('../images/user_icon.png')} style= {styles.footerIconStyle} />
-            <Image source={require('../images/file-bag.png')} style= {styles.footerIconStyle} />
-            <Image source={require('../images/app_logo.png')} style= {styles.footerIconStyle} />
-            <Image source={require('../images/dollar.png')} style= {styles.footerIconStyle} />
-            <Image source={require('../images/gethelp.png')} style= {styles.footerIconStyle} />
+
           </View>
-
-          <View style={styles.section6Inner}>
-          <Text style={{marginLeft:0}} onPress={() =>  this.props.navigation.navigate('EditProfile')}>My Profile</Text>
-          <Text style={{marginLeft:0}} onPress={() =>  this.props.navigation.navigate('LeaveReview')}>My Credits</Text>
-          <Text style={{marginLeft:0}} onPress={() =>  this.props.navigation.navigate('MyRide')}>Dashboard</Text>
-          <Text style={{marginLeft:0}} onPress={() =>  this.props.navigation.navigate('MyBalance')}>My Balance</Text>
-          <Text style={{marginLeft:0}} onPress={() =>  this.props.navigation.navigate('MyBookings')}>My Bookings</Text>
-          </View>
-          </View>
-
+          <Footer />
       </View>
     );
   }
@@ -187,7 +175,8 @@ const styles = StyleSheet.create({
     alignSelf: 'stretch',
     height:90,
     backgroundColor:'#FFFFFF',
-    marginBottom:5
+    marginBottom:5,
+    padding:5
   },
   sectionPaymentMethod:{
     alignSelf: 'stretch',
@@ -202,7 +191,7 @@ const styles = StyleSheet.create({
     alignSelf: 'stretch',
     height:80,
     //position:'absolute',
-    marginTop:90,     
+    marginTop:90,
     marginBottom:0,
     backgroundColor:'#FFFFFF',
 
