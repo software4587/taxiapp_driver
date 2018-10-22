@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, Image } from 'react-native';
+import { View, Text, StyleSheet, Image,TouchableOpacity } from 'react-native';
 import {Font} from 'expo';
 
 
@@ -20,35 +20,48 @@ export default class Footer extends Component {
   }
 
   render() {
+    const ds = this.props.navigation;
       return (
         <View style={styles.sectionFooter}>
         <View style={{marginBottom:10, justifyContent:'center', alignItems:'center', flexDirection:'row'}}>
 
         <View style={{justifyContent:'center', alignItems:'center', paddingHorizontal:8}}>
+        <TouchableOpacity onPress={() => ds.navigate('MyProfile')} style={{justifyContent:'center', alignItems:'center'}}>
         <Image source={require('./images/user_icon.png')} style= {styles.footerIconStyle} />
-        <Text style={{marginRight:0,fontFamily: 'GothamBook',fontSize:10}} >My Profile</Text>
+        <Text style={{marginRight:0,fontFamily: 'GothamBook',fontSize:10}}>My Profile</Text>
+        </TouchableOpacity>
         </View>
 
+
         <View style={{justifyContent:'center', alignItems:'center', paddingHorizontal:8}}>
+        <TouchableOpacity onPress={() => ds.navigate('BuyCredits')} style={{justifyContent:'center', alignItems:'center'}}>
         <Image source={require('./images/file-bag.png')} style= {styles.footerIconStyle} />
         <Text style={{marginLeft:0,fontFamily: 'GothamBook',fontSize:10}} >Buy Credits</Text>
+        </TouchableOpacity>
         </View>
 
         <View style={{justifyContent:'center', alignItems:'center', paddingHorizontal:8}}>
+        <TouchableOpacity onPress={() => ds.navigate('Dashboard')} style={{justifyContent:'center', alignItems:'center'}}>
         <Image source={require('./images/app_logo.png')} style= {styles.footerIconStyle} />
         <Text style={{marginLeft:0,fontFamily: 'GothamBook',fontSize:10}} >Dashboard</Text>
+        </TouchableOpacity>
         </View>
 
-        <View style={{justifyContent:'center', alignItems:'center', paddingHorizontal:8}}>
-        <Image source={require('./images/dollar.png')} style= {styles.footerIconStyle} />
-        <Text style={{marginLeft:0,fontFamily: 'GothamBook',fontSize:10}} >My Balance</Text>
-        </View>
 
         <View style={{justifyContent:'center', alignItems:'center', paddingHorizontal:8}}>
+          <TouchableOpacity onPress={() => ds.navigate('MyBalance')} style={{justifyContent:'center', alignItems:'center'}}>
+          <Image source={require('./images/dollar.png')} style= {styles.footerIconStyle} />
+          <Text style={{marginLeft:0,fontFamily: 'GothamBook',fontSize:10}} >My Balance</Text>
+          </TouchableOpacity>
+        </View>
+
+
+        <View style={{justifyContent:'center', alignItems:'center', paddingHorizontal:8}}>
+        <TouchableOpacity onPress={() => ds.navigate('MyProfile')} style={{justifyContent:'center', alignItems:'center'}}>
           <Image source={require('./images/gethelp.png')} style= {styles.footerIconStyle} />
           <Text style={{marginLeft:0,fontFamily: 'GothamBook',fontSize:10}}> Get Help</Text>
+        </TouchableOpacity>
         </View>
-
         </View>
         </View>
       )

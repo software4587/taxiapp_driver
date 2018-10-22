@@ -96,13 +96,13 @@ export default class BuyCredits extends Component
                 </View>
           </View>
               ) : null
-          } 
+          }
 
 
 
 
           </View>
-          <Footer />
+          <Footer navigation={this.props.navigation}/>
       </View>
     );
   }
