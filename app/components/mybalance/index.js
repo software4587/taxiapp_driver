@@ -5,13 +5,15 @@ import Footer from '../footer.js';
 
 export default class MyBalance extends Component {
     static navigationOptions = {
-        // header: null,
         title: "MY BALANCE",
         headerLeft: (
-            <View>
+            <TouchableOpacity
+                // onPress={() => this.props.navigation.goBack(null)}
+                onPress={() => this.props.navigation.push('Pickup')}
+            >
                 <Image source={require('./../images/backarrow.png')}
                        style={{width: 30, height: 30}}/>
-            </View>
+            </TouchableOpacity>
         ),
         headerStyle: {
             backgroundColor: '#f4511e',
@@ -27,23 +29,6 @@ export default class MyBalance extends Component {
         return (
             <View style={styles.container}>
 
-                <View style={{backgroundColor: '#f3353d'}}>
-
-                    <Button title="MY BALANCE"
-                            style={{backgroundColor: '#f3353d'}}
-                            onPress={() => this.props.navigation.navigate('Pickup')}>
-                    </Button>
-
-                </View>
-                <View style={{backgroundColor: '#f3353d'}}>
-
-                    <Button title="MY BALANCE"
-                            style={{backgroundColor: '#f3353d'}}
-                            onPress={() => this.props.navigation.navigate('Pickup')}>
-                    </Button>
-
-                </View>
-
                 <View style={{flex: 1}}>
                     <View style={styles.withdrawSection}>
                         <Text style={{fontSize: 35,}}>1,258</Text>
@@ -55,6 +40,7 @@ export default class MyBalance extends Component {
                             <Text style={{fontSize: 10, fontWeight: 'bold'}}>WITHDRAWAL</Text>
                         </TouchableOpacity>
                     </View>
+
 
                     <View style={styles.historyTitle}>
                         <Text style={{fontSize: 10, fontWeight: 'bold', marginLeft: 10}}>HISTORY</Text>
