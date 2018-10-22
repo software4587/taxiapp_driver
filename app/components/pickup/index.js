@@ -1,23 +1,39 @@
-import React, { Component } from 'react';
-import { View, Text, ImageBackground , StyleSheet, Image, TouchableOpacity, TextInput } from 'react-native';
+import React, {Component} from 'react';
+import {View, Text, ImageBackground, StyleSheet, Image, TouchableOpacity, TextInput, Button} from 'react-native';
 import Header from '../header.js';
 import Footer from '../footer.js';
 
-export default class Pickup extends Component
-{
-  static navigationOptions = {
-    header:null,
- };
-  render()
-  {
-    return (
-      <View  style={styles.container}>
-      <Header name="PICKUP" />
+export default class Pickup extends Component {
+    static navigationOptions =
+        ({navigation}) => ({ //don't forget parentheses around the object notation
+            title: "PICKUP",
+            headerLeft: (
+                <TouchableOpacity title='Back'
+                                  onPress={ () => {
+                                      navigation.push('MyBalance');
+                                  }}>
+                    <Image source={require('./../images/backarrow.png')}
+                           style={{width: 30, height: 30}}/>
+                </TouchableOpacity>
+            ),
+            headerStyle: {
+                backgroundColor: '#f4511e',
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+                fontWeight: 'bold',
+            },
+        })
 
-      <View style={{flex:1}}>
-          <View style={styles.detailSection}>
-            <View style={{flexDirection:'row'}}>
-              <Text style={{marginLeft:20,fontFamily:'GothamBold',fontSize:20}}>Scarlet Johnson</Text>
+    ;
+
+
+    render() {
+        return (
+            <View style={{flex:1}}>
+                <View style={styles.detailSection}>
+                    <View style={{flexDirection: 'row'}}>
+                        <Text style={{marginLeft: 20, fontFamily:'GothamBold', fontSize: 20}}>Scarlet Johnson</Text>
 
               <View style={{ marginLeft:20,backgroundColor:'#fccb32',width:50,
                 alignItems:'center',justifyContent:'center',flexDirection:'row',borderRadius:25,height:14,marginTop:10}}>
@@ -60,7 +76,7 @@ export default class Pickup extends Component
               </View>
           </View>
 
-          <View style={styles.talkSection}>
+               <View style={styles.talkSection}>
             <View style={{alignItems:'center', justifyContent:'center'}}>
             <Image source={require('../images/ring_icon.png')} style= {styles.iconTalk} />
             <Text style={{fontFamily:'GothamBold'}}>Call</Text>
@@ -75,10 +91,7 @@ export default class Pickup extends Component
             </View>
           </View>
 
-
-
-        </View>
-        <Footer />
+        <Footer/>
       </View>
     );
   }
