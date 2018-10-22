@@ -2,75 +2,100 @@ import React, { Component } from 'react';
 import { View, Text, ImageBackground , StyleSheet, Image, TouchableOpacity, TextInput } from 'react-native';
 import Header from '../header.js';
 import Footer from '../footer.js';
+import {Font} from 'expo';
 
 export default class MyBalance extends Component
 {
   static navigationOptions = {
     header:null,
  };
+
+ state = {
+     fontLoaded: false,
+ };
+
+ async componentDidMount() {
+     await Font.loadAsync({
+         'GothamBold': require('../../../assets/fonts/GothamBold.ttf'),
+         'GothamBook': require('../../../assets/fonts/GothamBook.ttf'),
+
+         'GothamBookItalic': require('../../../assets/fonts/GothamBookItalic.ttf'),
+         'GothamUltraItalic': require('../../../assets/fonts/Gotham-UltraItalic.otf'),
+     });
+     this.setState({fontLoaded: true});
+ }
+
   render()
   {
     return (
       <View  style={styles.container}>
-      <Header name="MY BALANCE" />
+      {
+        this.state.fontLoaded ? (
+        <Header name="MY BALANCE" fontFamily="GothamBold"/>
+      ):null
+      }
+
         <View style={{flex:1}}>
           <View style={styles.withdrawSection}>
-            <Text style={{fontSize:35,}}>1,258</Text>
-            <Text style={{fontWeight:'bold'}}>Total Available Balance</Text>
+            <Text style={{fontSize:35,fontFamily:"GothamBook"}}>1,258</Text>
+            <Text style={{fontWeight:'bold',fontFamily:"GothamBook"}}>Total Available Balance</Text>
             <TouchableOpacity onPress={() => this.props.navigation.navigate('Pickup')} style={{backgroundColor:'#F3C143', height:30,
             width: 170, borderRadius:10,alignItems:'center', justifyContent:'center',marginTop:5}}>
-              <Text style={{fontSize:10,fontWeight:'bold'}}>WITHDRAWAL</Text>
+              <Text style={{fontSize:15,fontFamily:"GothamBold"}}>WITHDRAWAL</Text>     
             </TouchableOpacity>
           </View>
 
           <View style={styles.historyTitle}>
-            <Text style={{fontSize:10,fontWeight:'bold', marginLeft:10}}>HISTORY</Text>
+            <Text style={{fontSize:10,fontWeight:'bold', marginLeft:10,fontFamily:"GothamBold"}}>HISTORY</Text>
           </View>
 
           <View style={styles.detailSection}>
-              <Text style={{fontWeight:'bold',fontSize:40,color:'#d8d8d8'}}>1</Text>
+              <Text style={{fontWeight:'bold',fontSize:40,color:'#d8d8d8',fontFamily:"GothamBold"}}>1</Text>
               <View>
-              <Text style={{marginLeft:20}}>Booking #45678</Text>
-              <Text style={{marginLeft:20, color:'gray',fontSize:10}}>DATE: 12 Aug, 2018</Text>
+              <Text style={{marginLeft:20,fontFamily:"GothamBook"}}>Booking #45678</Text>
+              <Text style={{marginLeft:20, color:'gray',fontSize:10,fontFamily:"GothamBook"}}>DATE: 12 Aug, 2018</Text>
               </View>
-              <Text style={{marginLeft:150,fontWeight:'bold',color:'green'}}>$2.50</Text>
+              <Text style={{marginLeft:150,fontWeight:'bold',color:'green',fontFamily:"GothamBold"}}>$2.50</Text>
+          </View>
+
+
+          <View style={styles.detailSection}>
+              <Text style={{fontWeight:'bold',fontSize:40,color:'#d8d8d8',fontFamily:"GothamBold"}}>2</Text>
+              <View>
+              <Text style={{marginLeft:20,fontFamily:"GothamBook"}}>Booking #45678</Text>
+              <Text style={{marginLeft:20, color:'gray',fontSize:10,fontFamily:"GothamBook"}}>DATE: 12 Aug, 2018</Text>
+              </View>
+              <Text style={{marginLeft:150,fontWeight:'bold',color:'green',fontFamily:"GothamBold"}}>$2.50</Text>
           </View>
 
           <View style={styles.detailSection}>
-              <Text style={{fontWeight:'bold',fontSize:40,color:'#d8d8d8'}}>2</Text>
+              <Text style={{fontWeight:'bold',fontSize:40,color:'#d8d8d8',fontFamily:"GothamBold"}}>3</Text>
               <View>
-              <Text style={{marginLeft:20}}>Booking #45678</Text>
-              <Text style={{marginLeft:20, color:'gray',fontSize:10}}>DATE: 12 Aug, 2018</Text>
+              <Text style={{marginLeft:20,fontFamily:"GothamBook"}}>Booking #45678</Text>
+              <Text style={{marginLeft:20, color:'gray',fontSize:10,fontFamily:"GothamBook"}}>DATE: 12 Aug, 2018</Text>
               </View>
-              <Text style={{marginLeft:150,fontWeight:'bold',color:'green'}}>$2.50</Text>
+              <Text style={{marginLeft:150,fontWeight:'bold',color:'green',fontFamily:"GothamBold"}}>$2.50</Text>
+          </View>
+
+
+          <View style={styles.detailSection}>
+              <Text style={{fontWeight:'bold',fontSize:40,color:'#d8d8d8',fontFamily:"GothamBold"}}>4</Text>
+              <View>
+              <Text style={{marginLeft:20,fontFamily:"GothamBook"}}>Booking #45678</Text>
+              <Text style={{marginLeft:20, color:'gray',fontSize:10,fontFamily:"GothamBook"}}>DATE: 12 Aug, 2018</Text>
+              </View>
+              <Text style={{marginLeft:150,fontWeight:'bold',color:'green',fontFamily:"GothamBold"}}>$2.50</Text>
           </View>
 
           <View style={styles.detailSection}>
-              <Text style={{fontWeight:'bold',fontSize:40,color:'#d8d8d8'}}>3</Text>
+              <Text style={{fontWeight:'bold',fontSize:40,color:'#d8d8d8',fontFamily:"GothamBold"}}>5</Text>
               <View>
-              <Text style={{marginLeft:20}}>Booking #45678</Text>
-              <Text style={{marginLeft:20, color:'gray',fontSize:10}}>DATE: 12 Aug, 2018</Text>
+              <Text style={{marginLeft:20,fontFamily:"GothamBook"}}>Booking #45678</Text>
+              <Text style={{marginLeft:20, color:'gray',fontSize:10,fontFamily:"GothamBook"}}>DATE: 12 Aug, 2018</Text>
               </View>
-              <Text style={{marginLeft:150,fontWeight:'bold',color:'green'}}>$2.50</Text>
+              <Text style={{marginLeft:150,fontWeight:'bold',color:'green',fontFamily:"GothamBold"}}>$2.50</Text>
           </View>
 
-          <View style={styles.detailSection}>
-              <Text style={{fontWeight:'bold',fontSize:40,color:'#d8d8d8'}}>4</Text>
-              <View>
-              <Text style={{marginLeft:20}}>Booking #45678</Text>
-              <Text style={{marginLeft:20, color:'gray',fontSize:10}}>DATE: 12 Aug, 2018</Text>
-              </View>
-              <Text style={{marginLeft:150,fontWeight:'bold',color:'green'}}>$2.50</Text>
-          </View>
-
-          <View style={styles.detailSection}>
-              <Text style={{fontWeight:'bold',fontSize:40,color:'#d8d8d8'}}>5</Text>
-              <View>
-              <Text style={{marginLeft:20}}>Booking #45678</Text>
-              <Text style={{marginLeft:20, color:'gray',fontSize:10}}>DATE: 12 Aug, 2018</Text>
-              </View>
-              <Text style={{marginLeft:150,fontWeight:'bold',color:'green'}}>$2.50</Text>
-          </View>
           </View>
           <Footer />
       </View>

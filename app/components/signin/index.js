@@ -32,7 +32,7 @@ export default class Welcome extends Component {
 
                 {
                     this.state.fontLoaded ? (
-                        <View style={styles.section1}>
+                        <View style={styles.section1}> 
 
                             <Text style={{
                                 fontSize: 30,
@@ -102,7 +102,7 @@ export default class Welcome extends Component {
                 <View style={{
                     flexDirection: 'row',
                     alignItems: 'center',
-                    justifyContent: 'space-around',
+                    justifyContent: 'center',
                     marginTop: 10,
                     width: 260,
                     marginLeft: 60,
@@ -110,11 +110,11 @@ export default class Welcome extends Component {
                 }}>
                     <View>
                         <Text onPress={() => this.props.navigation.navigate('CreateNewAccount')}
-                              style={{color: '#be98db', fontSize: 18}}>Not A Member? </Text>
+                              style={{color: '#be98db',fontFamily: 'GothamBook'}}>Not A Member? </Text>
                     </View>
                     <View>
                         <Text onPress={() => this.props.navigation.navigate('CreateNewAccount')}
-                              style={{color: '#FFFFFF', fontSize: 18}}>Create Account</Text>
+                              style={{color: '#FFFFFF',fontFamily: 'GothamBook'}}>Create Account</Text>
                     </View>
                 </View>
             </ImageBackground>
