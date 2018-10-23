@@ -52,38 +52,57 @@ export default class Welcome extends Component {
 
 
                 <View style={styles.section2}>
-                    <TouchableOpacity onPress={() => this.props.navigation.navigate('Signin')} style={{
-                        backgroundColor: '#FFFFFF',
-                        height: 55,
-                        borderRadius: 10,
-                        alignItems: 'center',
-                        justifyContent: 'center'
+
+                    <View style={{
+                        backgroundColor: '#9b9b9b',
+                        // width: 170,
+                        marginLeft: 10,
+                        // height: 55,
+                        padding: 1,
+                        borderColor: '#9b9b9b',
+                        borderWidth: 1,
+                        borderRadius: 10
                     }}>
-                        {
-                            this.state.fontLoaded ? (
-                                <Text style={{fontFamily: 'GothamBold', fontSize: 20}}>Get Started</Text>
-                            ) : null
-                        }
-                    </TouchableOpacity>
+                        <TouchableOpacity style={{
+                            backgroundColor: '#ffffff',
+                            padding: 20,
+                            // height: 35,
+                            // width: 140,
+                            borderRadius: 10,
+                            alignItems: 'center',
+                            justifyContent: 'center'
+                        }}>
+
+                            {
+                                this.state.fontLoaded ? (
+                                    <Text style={{fontFamily: 'GothamBold', fontSize: 20}}>Get Started</Text>
+                                ) : null
+                            }
+
+                        </TouchableOpacity>
+                    </View>
+
                     {
                         this.state.fontLoaded ? (
-                    <View style={{
-                        flexDirection: 'row',
-                        alignItems: 'center',
-                        justifyContent: 'space-around',
-                        marginTop: 15, 
-                        width: 250,
-                        marginLeft: 35,
-                    }}>
-                        <View>
-                            <Text style={{fontFamily: 'GothamBook', color: '#be98db', fontSize: 15}}>Ready to earn?</Text>
-                            {/*<Text style={{fontFamily: 'GothamBook', color: '#FFFFFF', fontSize: 15}}>Open Driver App</Text>*/}
+                            <View style={{
+                                flexDirection: 'row',
+                                alignItems: 'center',
+                                justifyContent: 'space-around',
+                                marginTop: 15,
+                                width: 250,
+                                marginLeft: 35,
+                            }}>
+                                <View>
+                                    <Text style={{fontFamily: 'GothamBook', color: '#be98db', fontSize: 15}}>Ready to
+                                        earn?</Text>
+                                    {/*<Text style={{fontFamily: 'GothamBook', color: '#FFFFFF', fontSize: 15}}>Open Driver App</Text>*/}
 
-                        </View>
-                        <View>
-                            <Text style={{fontFamily: 'GothamBook', color: '#FFFFFF', fontSize: 15}}>Open Driver App</Text>
-                        </View>
-                    </View>
+                                </View>
+                                <View>
+                                    <Text style={{fontFamily: 'GothamBook', color: '#FFFFFF', fontSize: 15}}>Open Driver
+                                        App</Text>
+                                </View>
+                            </View>
                         ) : null
                     }
                 </View>
