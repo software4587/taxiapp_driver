@@ -92,7 +92,7 @@ export default class MyBalance extends Component {
                         <Text style={{marginLeft: 150, fontWeight: 'bold', color: 'green'}}>$2.50</Text>
                     </View>
                 </View>
-                <Footer navigation={this.props.navigation}/>
+                {/*<Footer navigation={this.props.navigation}/>*/}
             </View>
         );
     }
