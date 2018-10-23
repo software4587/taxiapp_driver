@@ -9,7 +9,6 @@ export default class MyBalance extends Component {
         title: "MY BALANCE",
         headerLeft: (
             <TouchableOpacity
-                // onPress={() => this.props.navigation.goBack(null)}
                 onPress={() => this.props.navigation.push('Pickup')}
             >
                 <Image source={require('./../images/backarrow.png')}
