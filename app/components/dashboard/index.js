@@ -109,26 +109,50 @@ export default class Dashboard extends Component {
                                     paddingTop: 15
                                 }}>
 
-                                    {/*<View style = {{backgroundColor: '#dddddd', width: 158, marginLeft: 30, padding: 2, borderColor: '#dddddd', borderWidth: 2, borderRadius:10 }}>*/}
-
-                                        {/*<TouchableHighlight underlayColor = {'black'} onPress =                    {this.props.buttonPressed}>*/}
-                                            {/*<View style={{ backgroundColor: 'green', padding: 20,*/}
-                                                {/*height:35, width:150, borderRadius:10,alignItems:'center', justifyContent:'center'}}>*/}
-
-                                    <View style = {{backgroundColor: '#dddddd', width: 148, marginLeft: 10, padding: 2, borderColor: '#dddddd', borderWidth: 2, borderRadius:10 }}>
-                                        <TouchableOpacity style={{ backgroundColor: 'red', padding: 20,
-                                            height:35, width:140, borderRadius:10,alignItems:'center', justifyContent:'center' }}>
-                                            <Text style = {{color: '#FFFFFF'}}>
+                                    <View style={{
+                                        backgroundColor: '#f4f0f0',
+                                        width: 146,
+                                        marginLeft: 10,
+                                        padding: 2,
+                                        borderColor: '#f4f0f0',
+                                        borderWidth: 1,
+                                        borderRadius: 10
+                                    }}>
+                                        <TouchableOpacity style={{
+                                            backgroundColor: 'red',
+                                            padding: 20,
+                                            height: 35,
+                                            width: 140,
+                                            borderRadius: 10,
+                                            alignItems: 'center',
+                                            justifyContent: 'center'
+                                        }}>
+                                            <Text style={{color: '#FFFFFF'}}>
                                                 REJECT
                                             </Text>
                                         </TouchableOpacity>
                                     </View>
 
 
-                                    <View style = {{backgroundColor: '#dddddd', width: 148, marginLeft: 1, padding: 2, borderColor: '#dddddd', borderWidth: 2, borderRadius:10 }}>
-                                        <TouchableOpacity style={{ backgroundColor: 'green', padding: 20,
-                                            height:35, width:140, borderRadius:10,alignItems:'center', justifyContent:'center' }}>
-                                            <Text style = {{color: '#FFFFFF'}}>
+                                    <View style={{
+                                        backgroundColor: '#f4f0f0',
+                                        width: 146,
+                                        marginLeft: 1,
+                                        padding: 2,
+                                        borderColor: '#f4f0f0',
+                                        borderWidth: 1,
+                                        borderRadius: 10
+                                    }}>
+                                        <TouchableOpacity style={{
+                                            backgroundColor: 'green',
+                                            padding: 20,
+                                            height: 35,
+                                            width: 140,
+                                            borderRadius: 10,
+                                            alignItems: 'center',
+                                            justifyContent: 'center'
+                                        }}>
+                                            <Text style={{color: '#FFFFFF'}}>
                                                 ACCEPT
                                             </Text>
                                         </TouchableOpacity>
