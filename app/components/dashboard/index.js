@@ -3,6 +3,11 @@ import {View, Text, ImageBackground, StyleSheet, Image, TouchableOpacity, TextIn
 import Pickup from './../pickup';
 import Header from '../header.js';
 import Footer from '../footer.js';
+import { AwesomeButton } from 'react-awesome-button';
+// import 'react-awesome-button/dist/styles.css';
+import AwesomeButtonStyles from 'react-awesome-button/src/styles/styles.scss'
+
+
 import {Font} from 'expo';
 
 export default class Dashboard extends Component {
@@ -134,20 +139,32 @@ export default class Dashboard extends Component {
                             paddingTop: 15,
                             elevation: 2
                         }}>
-                            <TouchableOpacity style={{
-                                backgroundColor: 'red',
-                                height: 35,
-                                width: 150,
-                                borderRadius: 10,
-                                alignItems: 'center',
-                                justifyContent: 'center'
-                            }}>
-                                <Text style={{
-                                    fontSize: 10,
-                                    fontFamily: 'GothamBold',
-                                    color: '#FFFFFF'
-                                }}>REJECT</Text>
-                            </TouchableOpacity>
+                            {/*<TouchableOpacity style={{*/}
+                                {/*backgroundColor: 'red',*/}
+                                {/*height: 35,*/}
+                                {/*width: 150,*/}
+                                {/*borderRadius: 10,*/}
+                                {/*alignItems: 'center',*/}
+                                {/*justifyContent: 'center',*/}
+                                {/*shadowColor: 'rgba(0,0,0, .4)', // IOS*/}
+                                {/*shadowOffset: { height: 1, width: 1 }, // IOS*/}
+                                {/*shadowOpacity: 1, // IOS*/}
+                                {/*shadowRadius: 1, //IOS*/}
+                                {/*elevation: 5, // Android*/}
+                            {/*}}>*/}
+                                {/*<Text style={{*/}
+                                    {/*fontSize: 10,*/}
+                                    {/*fontFamily: 'GothamBold',*/}
+                                    {/*color: '#FFFFFF'*/}
+                                {/*}}>REJECT</Text>*/}
+                            {/*</TouchableOpacity>*/}
+                            <AwesomeButton
+                                cssModule={AwesomeButtonStyles}
+                                type="twitter"
+                            >
+                                Share
+                            </AwesomeButton>
+
                             <TouchableOpacity style={{
                                 backgroundColor: 'green',
                                 height: 35,
