@@ -53,9 +53,10 @@ export default class Dashboard extends Component {
     render() {
         return (
             <View style={styles.container}>
-                {
-                    this.state.fontLoaded ? (
-                        <View style={{flex: 1}}>
+
+                <View style={{flex: 1}}>
+                    {
+                        this.state.fontLoaded ? (
                             <View style={styles.withdrawSection}>
                                 <Image source={require('../images/man01.png')} style={styles.avatarImage}/>
                                 <View style={{paddingLeft: 35}}>
@@ -68,150 +69,167 @@ export default class Dashboard extends Component {
                                     </View>
                                 </View>
                             </View>
+                        ) : null
+                    }
 
-                            <View style={styles.detailSection}>
-                                <View style={{flexDirection: 'row'}}>
-                                    <Text style={{
-                                        marginLeft: 20, fontFamily: 'GothamBold', fontSize: 15,
-                                        textShadowColor: '#E91E63',
-                                        textShadowOffset: {width: 1, height: 4},
-                                        textShadowRadius: 5
-                                    }}>Scarlet
-                                        Johnson</Text>
+                    {
+                        this.state.fontLoaded ? (
+                    <View style={styles.detailSection}>
+                        <View style={{flexDirection: 'row'}}>
+                            <Text style={{
+                                marginLeft: 20, fontFamily: 'GothamBold', fontSize: 15,
+                                textShadowColor: '#E91E63',
+                                textShadowOffset: {width: 1, height: 4},
+                                textShadowRadius: 5
+                            }}>Scarlet
+                                Johnson</Text>
 
-                                    <View style={{
-                                        marginLeft: 20,
-                                        backgroundColor: '#fccb32',
-                                        width: 50,
-                                        alignItems: 'center',
-                                        justifyContent: 'center',
-                                        flexDirection: 'row',
-                                        borderRadius: 5
-                                    }}>
-                                        <Image source={require('../images/star_white.png')} style={styles.imageFooter}/>
-                                        <Text style={{fontFamily: 'GothamBold', color: '#FFFFFF'}}>4.7</Text>
-                                    </View>
-                                </View>
-                                <Text style={{marginLeft: 20, fontFamily: 'GothamBook'}}>Booking ID: #212154</Text>
-                                <View style={{flexDirection: 'row', paddingTop: 10}}>
-                                    <Text style={{
-                                        marginLeft: 20,
-                                        fontFamily: 'GothamBold',
-                                        color: '#8c8c8c'
-                                    }}>13.2km</Text>
-                                    <Text style={{marginLeft: 20, fontFamily: 'GothamBold', color: '#f40000'}}>SGD
-                                        12.65</Text>
-                                </View>
-
-                                <View style={{flexDirection: 'row', marginLeft: 20, marginTop: 5}}>
-
-                                    <Image source={require('../images/redlight.png')} style={styles.imageFooter}/>
-
-                                    <View style={{marginLeft: 15}}>
-                                        <Text style={{fontSize: 10, fontFamily: 'GothamBold'}}>PICKUP LOCATION</Text>
-                                        <Text style={{fontFamily: 'GothamBook'}}>Eunos Road 8 #05-03 Singapore</Text>
-                                    </View>
-                                </View>
-
-                                <View style={{flexDirection: 'row', marginLeft: 20, marginTop: 5}}>
-
-                                    <Image source={require('../images/green_icon.png')} style={styles.imageFooter}/>
-
-                                    <View style={{marginLeft: 15}}>
-                                        <Text style={{fontSize: 10, fontFamily: 'GothamBold'}}>DROP-OFF LOCATION</Text>
-                                        <Text style={{fontFamily: 'GothamBook'}}>Eunos Road 8 #05-03 Singapore</Text>
-                                    </View>
-                                </View>
-                                <View style={{
-                                    flexDirection: 'row',
-                                    justifyContent: 'space-around',
-                                    alignItems: 'center',
-                                    paddingTop: 15,
-                                    elevation: 2
-                                }}>
-                                    <TouchableOpacity style={{
-                                        backgroundColor: 'red',
-                                        height: 35,
-                                        width: 150,
-                                        borderRadius: 10,
-                                        alignItems: 'center',
-                                        justifyContent: 'center'
-                                    }}>
-                                        <Text style={{
-                                            fontSize: 10,
-                                            fontFamily: 'GothamBold',
-                                            color: '#FFFFFF'
-                                        }}>REJECT</Text>
-                                    </TouchableOpacity>
-                                    <TouchableOpacity style={{
-                                        backgroundColor: 'green',
-                                        height: 35,
-                                        width: 150,
-                                        borderRadius: 10,
-                                        alignItems: 'center',
-                                        justifyContent: 'center'
-                                    }}>
-                                        <Text style={{
-                                            fontSize: 10,
-                                            fontFamily: 'GothamBold',
-                                            color: '#FFFFFF',
-                                        }}>ACCEPT</Text>
-                                    </TouchableOpacity>
-                                </View>
+                            <View style={{
+                                marginLeft: 20,
+                                backgroundColor: '#fccb32',
+                                width: 50,
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                flexDirection: 'row',
+                                borderRadius: 5
+                            }}>
+                                <Image source={require('../images/star_white.png')} style={styles.imageFooter}/>
+                                <Text style={{fontFamily: 'GothamBold', color: '#FFFFFF'}}>4.7</Text>
                             </View>
-
-                            <View style={styles.paymentSections}>
-                                <View>
-                                    <Text style={{color: 'gray', fontFamily: 'GothamBook'}}>My Credits</Text>
-                                    <Text style={{color: 'blue', fontFamily: 'GothamBook'}}>Total Available
-                                        Credits</Text>
-                                </View>
-                                <Text style={{
-                                    color: 'gray',
-                                    paddingLeft: 130,
-                                    fontWeight: 'bold',
-                                    fontSize: 14,
-                                    paddingTop: 5,
-                                    fontFamily: 'GothamBook'
-                                }}>1,254</Text>
-                            </View>
-
-                            <View style={styles.paymentSections}>
-                                <View>
-                                    <Text style={{color: 'gray', fontFamily: 'GothamBook'}}>My Credits</Text>
-                                    <Text style={{color: 'blue', fontFamily: 'GothamBook'}}>Total Available
-                                        Credits</Text>
-                                </View>
-                                <Text style={{
-                                    color: 'gray',
-                                    paddingLeft: 130,
-                                    fontWeight: 'bold',
-                                    fontSize: 14,
-                                    paddingTop: 5,
-                                    fontFamily: 'GothamBook'
-                                }}>1,254</Text>
-                            </View>
-
-
-                            <View style={styles.paymentSections}>
-                                <View>
-                                    <Text style={{color: 'gray', fontFamily: 'GothamBook'}}>My Credits</Text>
-                                    <Text style={{color: 'blue', fontFamily: 'GothamBook'}}>Total Available
-                                        Credits</Text>
-                                </View>
-                                <Text style={{
-                                    color: 'gray',
-                                    paddingLeft: 130,
-                                    fontWeight: 'bold',
-                                    fontSize: 14,
-                                    paddingTop: 5,
-                                    fontFamily: 'GothamBook'
-                                }}>1,254</Text>
-                            </View>
-
                         </View>
-                    ) : null
-                }
+                        <Text style={{marginLeft: 20, fontFamily: 'GothamBook'}}>Booking ID: #212154</Text>
+                        <View style={{flexDirection: 'row', paddingTop: 10}}>
+                            <Text style={{
+                                marginLeft: 20,
+                                fontFamily: 'GothamBold',
+                                color: '#8c8c8c'
+                            }}>13.2km</Text>
+                            <Text style={{marginLeft: 20, fontFamily: 'GothamBold', color: '#f40000'}}>SGD
+                                12.65</Text>
+                        </View>
+
+                        <View style={{flexDirection: 'row', marginLeft: 20, marginTop: 5}}>
+
+                            <Image source={require('../images/redlight.png')} style={styles.imageFooter}/>
+
+                            <View style={{marginLeft: 15}}>
+                                <Text style={{fontSize: 10, fontFamily: 'GothamBold'}}>PICKUP LOCATION</Text>
+                                <Text style={{fontFamily: 'GothamBook'}}>Eunos Road 8 #05-03 Singapore</Text>
+                            </View>
+                        </View>
+
+                        <View style={{flexDirection: 'row', marginLeft: 20, marginTop: 5}}>
+
+                            <Image source={require('../images/green_icon.png')} style={styles.imageFooter}/>
+
+                            <View style={{marginLeft: 15}}>
+                                <Text style={{fontSize: 10, fontFamily: 'GothamBold'}}>DROP-OFF LOCATION</Text>
+                                <Text style={{fontFamily: 'GothamBook'}}>Eunos Road 8 #05-03 Singapore</Text>
+                            </View>
+                        </View>
+                        <View style={{
+                            flexDirection: 'row',
+                            justifyContent: 'space-around',
+                            alignItems: 'center',
+                            paddingTop: 15,
+                            elevation: 2
+                        }}>
+                            <TouchableOpacity style={{
+                                backgroundColor: 'red',
+                                height: 35,
+                                width: 150,
+                                borderRadius: 10,
+                                alignItems: 'center',
+                                justifyContent: 'center'
+                            }}>
+                                <Text style={{
+                                    fontSize: 10,
+                                    fontFamily: 'GothamBold',
+                                    color: '#FFFFFF'
+                                }}>REJECT</Text>
+                            </TouchableOpacity>
+                            <TouchableOpacity style={{
+                                backgroundColor: 'green',
+                                height: 35,
+                                width: 150,
+                                borderRadius: 10,
+                                alignItems: 'center',
+                                justifyContent: 'center'
+                            }}>
+                                <Text style={{
+                                    fontSize: 10,
+                                    fontFamily: 'GothamBold',
+                                    color: '#FFFFFF',
+                                }}>ACCEPT</Text>
+                            </TouchableOpacity>
+                        </View>
+                    </View>
+                        ) : null
+                    }
+
+                    {
+                        this.state.fontLoaded ? (
+                    <View style={styles.paymentSections}>
+                        <View>
+                            <Text style={{color: 'gray', fontFamily: 'GothamBook'}}>My Credits</Text>
+                            <Text style={{color: 'blue', fontFamily: 'GothamBook'}}>Total Available
+                                Credits</Text>
+                        </View>
+                        <Text style={{
+                            color: 'gray',
+                            paddingLeft: 130,
+                            fontWeight: 'bold',
+                            fontSize: 14,
+                            paddingTop: 5,
+                            fontFamily: 'GothamBook'
+                        }}>1,254</Text>
+                    </View>
+                        ) : null
+                    }
+
+
+                    {
+                        this.state.fontLoaded ? (
+                    <View style={styles.paymentSections}>
+                        <View>
+                            <Text style={{color: 'gray', fontFamily: 'GothamBook'}}>My Credits</Text>
+                            <Text style={{color: 'blue', fontFamily: 'GothamBook'}}>Total Available
+                                Credits</Text>
+                        </View>
+                        <Text style={{
+                            color: 'gray',
+                            paddingLeft: 130,
+                            fontWeight: 'bold',
+                            fontSize: 14,
+                            paddingTop: 5,
+                            fontFamily: 'GothamBook'
+                        }}>1,254</Text>
+                    </View>
+                        ) : null
+                    }
+
+                    {
+                        this.state.fontLoaded ? (
+                    <View style={styles.paymentSections}>
+                        <View>
+                            <Text style={{color: 'gray', fontFamily: 'GothamBook'}}>My Credits</Text>
+                            <Text style={{color: 'blue', fontFamily: 'GothamBook'}}>Total Available
+                                Credits</Text>
+                        </View>
+                        <Text style={{
+                            color: 'gray',
+                            paddingLeft: 130,
+                            fontWeight: 'bold',
+                            fontSize: 14,
+                            paddingTop: 5,
+                            fontFamily: 'GothamBook'
+                        }}>1,254</Text>
+                    </View>
+                        ) : null
+                    }
+
+                </View>
+
             </View>
 
         );
